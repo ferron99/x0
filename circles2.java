@@ -1,11 +1,11 @@
 //// Wild circles #2.
 String title=  "Click for another circle.";
 String subtitle=  "Press any key to erase.";
-String author=  "Bruce Alan Martin";
+String author=  "Nick Ferro";
 
 // GLOBAL VARIABLES //
 float x,y;
-int h,w;
+int h,w,k,j,i;
 
 // Setup:  screen size, initialization. //
 void setup() {
@@ -14,6 +14,9 @@ void setup() {
   y=  height/2;
   w=  80;          // width of ellipse.
   h=  80;          // height of ellipse
+  k=  130;
+  j=  100;        //Colors for the ellipse
+  i=  50;
 }
 
 // Next frame. //
@@ -24,8 +27,11 @@ void draw() {
   text( w+"x"+h, width/2,height-10 );
   //
   ellipse(x, y, w, h);
+  fill(201,310,50);
+  text("Ball", x, y);
+  fill(k, j, i);
+  
 }
-
 
 //  Handle mouse clicks //
 void mousePressed() {
@@ -41,4 +47,8 @@ void keyPressed() {
   fill( random(255), random(255), random(255) );
   w=  int( random(50,150) );
   h=  int( random(50,150) );
+  k=  int( random(0,255) );
+  j=  int( random(0,255) );
+  i=  int( random(0,255) );
 }
+
